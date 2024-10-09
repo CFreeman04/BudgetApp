@@ -1,0 +1,59 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BudgetApp
+build_property.ProjectDir = C:\Users\freew\OneDrive\OD Documents\School\GitHub\BudgetAppDemo\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/Views/BudgetPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.Views.BudgetPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\BudgetPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\BudgetPage.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/Views/Categories.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.Views.Categories.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Categories.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Categories.xaml
+
+[C:/Users/freew/OneDrive/OD Documents/School/GitHub/BudgetAppDemo/Views/TransactionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = BudgetApp.Views.TransactionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\TransactionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\TransactionPage.xaml

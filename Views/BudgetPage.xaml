@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetApp.Views.BudgetPage">
+    <!--Add an item to the toolbar-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Categories" Clicked="Categories_Clicked"/>
+        <ToolbarItem Text="Add" Clicked="Add_Clicked" IconImageSource="{FontImage Glyph='+', Color=Black, Size=22}" />
+    </ContentPage.ToolbarItems>
+      
+    <StackLayout Padding="20">
+        <Label Text="Budget App" FontSize="32" HorizontalOptions="Center" />
+
+        <HorizontalStackLayout>
+            <Label Text="Balance" FontSize="20" Padding="10" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+            <Label x:Name="BalanceLabel" Text="Waiting for value..." FontSize="20" VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <Entry x:Name="DescriptionEntry" Placeholder="Description" />
+        <Entry x:Name="AmountEntry" Placeholder="Amount" Keyboard="Numeric" />
+
+        <Picker x:Name="TypePicker" >
+            <!-- Title="Select a type"-->
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Select a transaction type</x:String>
+                    <x:String>Income</x:String>
+                    <x:String>Expense</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+        </Picker>
+
+        <Button Text="Add Transaction" Clicked="OnAddTransactionClicked" Padding="20"/>
+
+        <Label Text="Latest Transactions" FontSize="25"/>
+        <Grid ColumnSpacing="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"/> <!-- Date Column -->
+                <ColumnDefinition Width="75"/> <!-- Amount Column -->
+                <ColumnDefinition Width="100"/> <!-- Category Column -->
+                <ColumnDefinition Width="75"/> <!-- Id Column -->
+                <ColumnDefinition Width="100"/> <!-- Id Column -->
+                <ColumnDefinition Width="150"/> <!-- Id Column -->
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Date" FontAttributes="Bold" Grid.Column="0"/>
+            <!--<Label Text="Description" FontAttributes="Bold" Grid.Column="1"/>-->
+            <Label Text="Amount" FontAttributes="Bold" Grid.Column="1" HorizontalTextAlignment="End"/>
+            <Label Text="Category" FontAttributes="Bold" Grid.Column="2" HorizontalTextAlignment="End"/>
+            <!--<Label Text="Description" FontAttributes="Bold" Grid.Column="1"/>-->
+            
+
+        </Grid>
+        
+        <!--Displaying Transaction Data-->
+        <CollectionView ItemsSource="{Binding Transactions}"
+                        SelectionMode="Single"
+                        SelectionChanged="Budget_SelectionChanged"
+                        VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnSpacing="5" 
+                          ColumnDefinitions="75,75,100"
+                          RowDefinitions="*,*" Padding="0">
+
+                        <!--Bind columns to properties in RowData-->
+                        <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}" Grid.Column="0"/>
+                        <Label Text="{Binding Amount}" Grid.Column="1" HorizontalTextAlignment="End"/>
+                        <Label Text="{Binding Category}" Grid.Column="2" HorizontalTextAlignment="End"/>
+                        <!--<Label Text="{Binding IsIncome}" Grid.Row="0" Grid.Column="4" HorizontalTextAlignment="End"/>-->
+                        <Label Text="{Binding Description}" Grid.Row="1" Grid.Column="0"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <!--This code works-->
+        <!--<CollectionView x:Name="TransactionsList" 
+                        ItemsSource="{Binding Transactions}"
+                        VerticalOptions="FillAndExpand"
+                        SelectionMode="Single"
+                        SelectionChanged="Budget_SelectionChanged">
+            
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="1"/>
+            </CollectionView.ItemsLayout>
+            
+            
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <Label Text="{Binding Description}" FontSize="20"/>
+                        <Label Text="{Binding Amount}" FontSize="15"/>
+                        <Label Text="{Binding Date}" FontSize="10"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+        <!--
+        <ListView x:Name="TransactionsList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Description}" Detail="{Binding Amount}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        -->
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetApp.Views.TransactionPage">
+    <!--Title="Transaction Page">-->
+    <VerticalStackLayout>
+        <Label x:Name="TopName"
+            Text="Update Transaction"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" 
+            FontSize="35"
+            Padding="20"/>
+        <Grid RowDefinitions="*,*,*,*,*,*"
+              ColumnDefinitions="175,350"
+              RowSpacing="6"
+              ColumnSpacing="6">
+            <Grid.Resources>
+                <Style TargetType="Label">
+                    <Setter Property="FontAttributes" Value="Bold"/>
+                    <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                    <Setter Property="HorizontalOptions" Value="End"/>
+                    <Setter Property="FontSize" Value="20"/>
+                </Style>
+            </Grid.Resources>
+            <Label Grid.Row="0" Text="Transaction ID" />
+            <Entry x:Name="IDEntry" Grid.Row="0" Grid.Column="2" Text="{Binding Id}" IsEnabled="False" Placeholder="Auto-Generated"/>
+            <Label Grid.Row="1" Text="Description" /> 
+            <Entry x:Name="DescriptionEntry" Grid.Row="1" Grid.Column="2" Text="{Binding Description}" />
+            <Label Grid.Row="2" Text="Amount" /> 
+            <Entry x:Name="AmountEntry" Grid.Row="2" Grid.Column="2" Text="{Binding Amount}"/>
+            <Label Grid.Row="3" Text="Category" />
+            <Picker x:Name="CategoryEntry" Grid.Row="3" Grid.Column="2" ItemsSource="{Binding TestCategories, Mode=TwoWay}" SelectedItem="{Binding TestCatgories}">
+                <!--<Picker.SelectedItem>Home</Picker.SelectedItem>-->
+                <Picker.SelectedIndex>0</Picker.SelectedIndex>
+            </Picker>
+            <!--<Entry x:Name="CategoryEntry"  Grid.Row="3" Grid.Column="2" Text="{Binding .}"/>-->
+            <Label Grid.Row="4" Text="Date" />
+            <DatePicker x:Name="DateEntry" Grid.Row="4" Grid.Column="2" Date="{Binding Date}"/>
+            <Label Grid.Row="5" Text="Transaction Type" />
+            <Picker x:Name="TypePicker" Grid.Row="5" Grid.Column="2">
+                <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">                    
+                    <x:String>Income</x:String>
+                    <x:String>Expense</x:String>
+                </x:Array>
+                </Picker.ItemsSource>
+                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+            </Picker>            
+        </Grid>
+        <Grid ColumnDefinitions="150,150,150" ColumnSpacing="4" HorizontalOptions="Center" Padding="20">
+            <Button x:Name="AddUpdateButton"  Text="Update" 
+                    Clicked="SaveButton_Clicked"/>
+            <Button x:Name="DeleteButton" Grid.Column="1" 
+                    Text="Delete" 
+                    Clicked="DeleteButton_Clicked"/>
+            <Button Grid.Column="2"
+                    Text="Cancel" 
+                    Clicked="CancelButton_Clicked"/>            
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
